@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import store from 'store';
+import { Col, Row } from 'react-materialize';
+import GameList from 'components/GameList';
 
-function App() {
-  return (
+const App = () => (
+  <Provider store={store}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hello, world!
     </div>
-  );
-}
+    <Row>
+      <Col s={12} m={10} l={8} offset="m1 l2">
+        <GameList />
+      </Col>
+    </Row>
+  </Provider>
+);
 
 export default App;
